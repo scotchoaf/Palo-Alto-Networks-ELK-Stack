@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "b4132cc0-0a7f-11e8-a38a-8becd44ee9a9",
+    "_type": "search",
+    "_source": {
+      "title": "Threat - Allow or Alert Only Activity",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "SourceIP",
+        "ThreatID",
+        "Threat_ContentType",
+        "Action",
+        "Severity"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"(Threat_ContentType:vulnerability OR Threat_ContentType:spyware OR Threat_ContentType:virus) AND (Action:alert OR Action:allow) AND (Action:alert OR Action:allow)\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e78faa80-1743-11e8-a38a-8becd44ee9a9",
+    "_type": "search",
+    "_source": {
+      "title": "Threat - Blocked Signature Activity",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "SourceIP",
+        "ThreatID",
+        "Threat_ContentType",
+        "Action",
+        "Severity"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"(Threat_ContentType:vulnerability OR Threat_ContentType:spyware OR Threat_ContentType:virus) AND (-Action:alert OR -Action:allow)\"},\"filter\":[]}"
+      }
+    }
+  }
+]

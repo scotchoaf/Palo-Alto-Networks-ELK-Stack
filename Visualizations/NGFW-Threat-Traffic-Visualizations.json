@@ -1,0 +1,171 @@
+[
+  {
+    "_id": "a17f91e0-1743-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threat - Alert or Allow Signature Hits",
+      "visState": "{\"title\":\"Threat - Alert or Allow Signature Hits\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Threat_ContentType.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"ThreatID.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "b4132cc0-0a7f-11e8-a38a-8becd44ee9a9",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "f1d209a0-1740-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threat - Explicit Block Rules with Source IP",
+      "visState": "{\"title\":\"Threat - Explicit Block Rules with Source IP\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"RuleName.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"SourceIP\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"filter\":[{\"meta\":{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"type\":\"phrases\",\"key\":\"RuleName.keyword\",\"value\":\"Block-mal-phish-C2-URL\",\"params\":[\"Block-mal-phish-C2-URL\"],\"negate\":false,\"disabled\":false,\"alias\":null},\"query\":{\"bool\":{\"should\":[{\"match_phrase\":{\"RuleName.keyword\":\"Block-mal-phish-C2-URL\"}}],\"minimum_should_match\":1}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "707486e0-1744-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threat - Potential Application Evasion Apps and Associated Ports",
+      "visState": "{\"title\":\"Threat - Potential Application Evasion Apps and Associated Ports\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Application.keyword\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Applications Using Non-Default Ports per Applipedia\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"DestinationPort\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"filter\":[{\"meta\":{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"type\":\"phrases\",\"key\":\"RuleName.keyword\",\"value\":\"MSSP-find-non-def-apps, MSSP-dyn-STUN-ports\",\"params\":[\"MSSP-find-non-def-apps\",\"MSSP-dyn-STUN-ports\"],\"negate\":false,\"disabled\":false,\"alias\":null},\"query\":{\"bool\":{\"should\":[{\"match_phrase\":{\"RuleName.keyword\":\"MSSP-find-non-def-apps\"}},{\"match_phrase\":{\"RuleName.keyword\":\"MSSP-dyn-STUN-ports\"}}],\"minimum_should_match\":1}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "653782d0-1741-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threat - Signature Protections with Source IP",
+      "visState": "{\"title\":\"Threat - Signature Protections with Source IP\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Action.keyword\",\"exclude\":\"alert|allow\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"SourceIP.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"filter\":[{\"meta\":{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"type\":\"phrases\",\"key\":\"Threat_ContentType.keyword\",\"value\":\"spyware, vulnerability, virus\",\"params\":[\"spyware\",\"vulnerability\",\"virus\"],\"negate\":false,\"disabled\":false,\"alias\":null},\"query\":{\"bool\":{\"should\":[{\"match_phrase\":{\"Threat_ContentType.keyword\":\"spyware\"}},{\"match_phrase\":{\"Threat_ContentType.keyword\":\"vulnerability\"}},{\"match_phrase\":{\"Threat_ContentType.keyword\":\"virus\"}}],\"minimum_should_match\":1}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "765e1330-1741-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threat - URL Filtering Protections with Source IP",
+      "visState": "{\"title\":\"Threat - URL Filtering Protections with Source IP\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":false,\"last_level\":false,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Action.keyword\",\"exclude\":\"alert|allow\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"SourceIP.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"filter\":[{\"meta\":{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"type\":\"phrases\",\"key\":\"Threat_ContentType.keyword\",\"value\":\"url\",\"params\":[\"url\"],\"negate\":false,\"disabled\":false,\"alias\":null},\"query\":{\"bool\":{\"should\":[{\"match_phrase\":{\"Threat_ContentType.keyword\":\"url\"}}],\"minimum_should_match\":1}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "b0d838b0-1746-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Threat - Wildfire Verdicts with Top 10 File Types",
+      "visState": "{\"title\":\"Threat - Wildfire Verdicts with Top 10 File Types\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":5,\"colorSchema\":\"Blues\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"URLCategory.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Wildfire Verdict\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"ThreatID.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"File Type\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 1\":\"rgb(247,251,255)\",\"1 - 2\":\"rgb(208,225,242)\",\"2 - 3\":\"rgb(148,196,223)\",\"3 - 4\":\"rgb(74,152,201)\",\"4 - 4\":\"rgb(23,100,171)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"filter\":[{\"meta\":{\"index\":\"d0018600-05f4-11e8-a38a-8becd44ee9a9\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"Threat_ContentType.keyword\",\"value\":\"wildfire\",\"params\":{\"query\":\"wildfire\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"Threat_ContentType.keyword\":{\"query\":\"wildfire\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "04bf5140-1736-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic - Bytes Sent and Received",
+      "visState": "{\"type\":\"timelion\",\"title\":\"Traffic - Bytes Sent and Received\",\"params\":{\"expression\":\".es(index=traffic*, metric=sum:BytesReceived).label('Bytes Received'), .es(index=traffic*, metric=sum:BytesSent).label('Bytes Sent')\",\"interval\":\"1h\"}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "38b164b0-1737-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic - Destination Locations",
+      "visState": "{\"title\":\"Traffic - Destination Locations\",\"type\":\"tile_map\",\"params\":{\"mapType\":\"Shaded Circle Markers\",\"isDesaturated\":true,\"addTooltip\":true,\"heatClusterSize\":2,\"legendPosition\":\"bottomright\",\"mapZoom\":2,\"mapCenter\":[0,0],\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"DestinationIPGeo.location\",\"autoPrecision\":true,\"isFilteredByCollar\":true,\"useGeocentroid\":true,\"precision\":3}}]}",
+      "uiStateJSON": "{\"mapCenter\":[16.13026201203477,-22.370260781250007],\"mapZoom\":4}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  },
+  {
+    "_id": "54adb000-1733-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic - Top 10 Source IP with their Top 5 Applications",
+      "visState": "{\"title\":\"Traffic - Top 10 Source IP with their Top 5 Applications\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Sum of Bytes\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Sum of Bytes\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"SourceIP\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Application.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "c60250f0-173b-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic - Top 10 Destination Country and Related Source IP (Outside Local Country)",
+      "visState": "{\"title\":\"Traffic - Top 10 Destination Country and Related Source IP (Outside Local Country)\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Sum of Bytes\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Sum of Bytes\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"DestinationIPGeo.country_code2.keyword\",\"exclude\":\"US|FR\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"SourceIP\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  },
+  {
+    "_id": "fe6e1130-1732-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic - Top 10 URL Categories with their Top 5 Applications",
+      "visState": "{\"title\":\"Traffic - Top 10 URL Categories with their Top 5 Applications\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":false,\"last_level\":false,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"URLCategory.keyword\",\"exclude\":\"any\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Application.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "8c5d2b80-1732-11e8-a38a-8becd44ee9a9",
+    "_type": "visualization",
+    "_source": {
+      "title": "Traffic - Top 20 Apps by Bytes",
+      "visState": "{\"title\":\"Traffic - Top 20 Apps by Bytes\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true,\"legendPosition\":\"right\",\"type\":\"pie\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Application.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"135c8c90-05fc-11e8-a38a-8becd44ee9a9\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  }
+]
